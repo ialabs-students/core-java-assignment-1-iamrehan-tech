@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class ProductService {
     // making references and creating variables!
     Product product;
-    public static ArrayList<Product> prods = Product.getProductsList();
+    public static ArrayList<Product> item = Product.getProductsList();
     String prodName;
     double temp = 0.00;
     Product product_object, temp_obj;
@@ -14,7 +14,7 @@ public class ProductService {
     public String findNameByCode(int productCode) {
 
         try{
-        prods.forEach(
+        item.forEach(
                 a -> {
                     if (productCode == a.getProductCode()) {
                         prodName = a.getName();   
@@ -31,7 +31,7 @@ public class ProductService {
     }
 
     public Product findMaxPriceProduct(String catagory) {
-        prods.forEach(
+        item.forEach(
                 a -> {
                     if (catagory == a.getCategory()) {
                         product_object = a;
@@ -48,7 +48,7 @@ public class ProductService {
     }
 
     public ArrayList<Product> getProductsByCategory(String catagory) {
-        prods.forEach(
+        item.forEach(
                 a -> {
                     if (catagory == a.getCategory()) {
                         newList.add(a);
